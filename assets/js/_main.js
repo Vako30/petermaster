@@ -26,10 +26,31 @@ var Roots = {
     }
   },
   // Home page
+
   home: {
+
     init: function() {
+
       // JavaScript to be fired on the home page
+
+      $("#owl-example").owlCarousel({
+
+        animateOut: 'slideOutDown',
+
+        animateIn: 'flipInX',
+
+        items:1,
+
+        margin:0,
+
+        stagePadding:0,
+
+        smartSpeed:450
+
+      });
+
     }
+
   },
   // About us page, note the change from about-us to about_us.
   about_us: {

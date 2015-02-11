@@ -6,9 +6,9 @@ Template Name: Home
 <div id="owl-example" class="owl-carousel">
         <div class="general-slider">
             <div class="sl-items">
-<img src="..." alt="">
-<img src="..." alt="">
-<img src="..." alt="">
+                <img src="..." alt="">
+                <img src="..." alt="">
+                <img src="..." alt="">
             </div>
 
             <div class="owl-under-img-text">
