@@ -6,9 +6,9 @@ Template Name: Home
 <div id="owl-example" class="owl-carousel">
         <div class="general-slider">
             <div class="sl-items">
-                <img src="..." alt="">
-                <img src="..." alt="">
-                <img src="..." alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/slide1.jpg" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/window1.jpg" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/slide1.jpg" alt="">
             </div>
 
             <div class="owl-under-img-text">
@@ -51,10 +51,11 @@ Template Name: Home
             <h2 class="text-center">Загаловок H2</h2>
 
             <p class="">
-                Stylized implementation of HTML's element for abbreviations and acronyms to show the
-                expanded version on hover. Abbreviations with a title attribute have a light dotted bottom border
-                and a help cursor on hover, providing additional context on hover and to users of assistive
-                technologies.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Dolore esse illo ipsa ipsam itaque iusto sed voluptate?
+                Ad aliquam assumenda consequatur cum dolor dolorem doloremque
+                dolores dolorum et, excepturi facere facilis fugiatimpedit, in incidunt labore
+                magnam modi molestiae optio, quas quibusdam reprehenderit rerum vitae. Dolore id minus reiciendis veniam!
             </p>
         </div>
         <div class="row well">
@@ -88,5 +89,5 @@ Template Name: Home
         <div class="row well">
             <h4 class="text-center">Загаловок H4</h4>
 
-            <p class="text-center">Загаловок H3 dfshxfgjnyjh dhd fhgfdxj fghd d gh ghdf</p>
+            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam assumenda aut blanditiis iste labore magnam non rerum sit tempore vel.  </p>
         </div>
