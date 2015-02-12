@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Price-List
+  Template Name: Price-List
  */
 ?>
 
