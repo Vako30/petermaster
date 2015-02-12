@@ -12,10 +12,10 @@
 
         <nav class="col-xs-12 col-sm-6 col-md-8 collapse navbar-collapse pull-right" role="navigation">
 
-            <div class="col-xs-9 pull-right">
+            <div class="col-xs-12 pull-right">
                 <adress class="pull-right"><abbr title="Phone">ТЕЛ:</abbr>888-888-888</adress>
             </div>
-            <div class="col-xs-9 pull-right">
+            <div class="col-xs-12 pull-right">
             <?php
             if (has_nav_menu('primary_navigation')) :
                 wp_nav_menu(array('theme_location' => 'primary_navigation', 'walker' => new Roots_Nav_Walker(), 'menu_class' => 'nav navbar-nav pull-right'));
