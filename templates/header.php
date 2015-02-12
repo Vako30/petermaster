@@ -1,29 +1,30 @@
 <header class="banner navbar navbar-default navbar-static-top" role="banner">
     <div class="container">
         <div class="row">
-        <div class="col-xs-12 col-md-4 navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo4.png" class="img-responsive" alt=""></a>
-        </div>
-
-        <nav class="col-xs-12 col-sm-6 col-md-8 collapse navbar-collapse pull-right" role="navigation">
-
-            <div class="col-xs-12 pull-right">
-                <address class="pull-right"><abbr title="Phone"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/phone.png" alt=""></abbr> (812) 941-82-71</address>
+            <div class="col-md-4 navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo4.png" class="img-responsive" alt=""></a>
             </div>
-            <div class="col-xs-12 pull-right">
-            <?php
-            if (has_nav_menu('primary_navigation')) :
-                wp_nav_menu(array('theme_location' => 'primary_navigation', 'walker' => new Roots_Nav_Walker(), 'menu_class' => 'nav navbar-nav pull-right'));
-            endif;
-            ?>
+            <div class="col-md-8">
+                <nav class=" collapse navbar-collapse" role="navigation">
+
+                    <div class="col-xs-12 ">
+                        <div class="pull-right"> <span class="glyphicon glyphicon-phone-alt boder-phone-icon"></span> <span class="border-phone">(812) 941-82-71</span> </div>
+                    </div>
+                    <div class="col-xs-12 ">
+                    <?php
+                    if (has_nav_menu('primary_navigation')) :
+                        wp_nav_menu(array('theme_location' => 'primary_navigation', 'walker' => new Roots_Nav_Walker(), 'menu_class' => 'nav navbar-nav pull-right'));
+                    endif;
+                    ?>
+                    </div>
+                </nav>
             </div>
-        </nav>
         </div>
     </div>
 </header>

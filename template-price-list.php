@@ -1,7 +1,7 @@
 <?php
-/**
+/*
   Template Name: Price-List
- */
+*/
 ?>
 
 <div class="row well">

@@ -1,7 +1,7 @@
 <?php
-/**
- * Template Name: Our clients
- */
+/*
+  Template Name: Our clients
+*/
 ?>
 
 <div class="row well">
