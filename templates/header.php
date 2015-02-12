@@ -7,13 +7,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
+            <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo4.png" alt=""></a>
         </div>
 
         <nav class="col-xs-12 col-sm-6 col-md-8 collapse navbar-collapse pull-right" role="navigation">
 
             <div class="col-xs-12 pull-right">
-                <adress class="pull-right"><abbr title="Phone">ТЕЛ:</abbr>888-888-888</adress>
+                <address class="pull-right"><abbr title="Phone"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/phone.png" alt=""></abbr> (812) 941-82-71</address>
             </div>
             <div class="col-xs-12 pull-right">
             <?php
