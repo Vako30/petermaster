@@ -13,10 +13,10 @@
             <div class="col-sm-12 col-md-8">
                 <nav class=" collapse navbar-collapse" role="navigation">
 
-                    <div class="col-xs-12 ">
-                        <div class="pull-right"> <span class="glyphicon glyphicon-phone-alt boder-phone-icon"></span> <span class="border-phone">(812) 941-82-71</span> </div>
+                    <div class="col-xs-12 no-padding">
+                        <div class="pull-right phopne-mother-div‏"> <span class="glyphicon glyphicon-earphone‏‏"></span> <span class="border-phone">(812) 941-82-71</span> </div>
                     </div>
-                    <div class="col-xs-12 ">
+                    <div class="col-xs-12 no-padding">
                     <?php
                     if (has_nav_menu('primary_navigation')) :
                         wp_nav_menu(array('theme_location' => 'primary_navigation', 'walker' => new Roots_Nav_Walker(), 'menu_class' => 'nav navbar-nav pull-right'));
