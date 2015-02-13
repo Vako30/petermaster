@@ -14,7 +14,7 @@
                 <nav class=" collapse navbar-collapse" role="navigation">
 
                     <div class="col-xs-12 no-padding">
-                        <div class="pull-right phopne-mother-div‏"> <span class="glyphicon glyphicon-earphone‏‏"></span> <span class="border-phone">(812) 941-82-71</span> </div>
+                        <div class=" pull-right phone-mother-div "> <span class="glyphicon glyphicon-earphone phone-icon"></span> <span class="phone-number">(812) 941-82-71</span> </div>
                     </div>
                     <div class="col-xs-12 no-padding">
                     <?php
