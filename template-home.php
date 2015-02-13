@@ -16,7 +16,7 @@ Template Name: Home
     </div>
 </div>
 
-<div class="row well">
+<div class="row no-margin well">
 
     <h1 class="text-center">Загаловок H1</h1>
 
@@ -48,7 +48,7 @@ Template Name: Home
     </div>
 </div>
 
-<div class="row well">
+<div class="row no-margin well">
     <h2 class="text-center">Загаловок H2</h2>
 
     <p class="">
@@ -61,7 +61,7 @@ Template Name: Home
 
 </div>
 
-<div class="row well">
+<div class="row no-margin well">
 
     <h3 class="text-center">Загаловок H3</h3>
 
@@ -93,7 +93,7 @@ Template Name: Home
     </div>
 </div>
 
-<div class="row well">
+<div class="row no-margin well ">
 
     <h4 class="text-center">Загаловок H4</h4>
 

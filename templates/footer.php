@@ -1,6 +1,6 @@
 <footer class="content-info" role="contentinfo">
     <div class="container">
-        <div class="row footer_cont well">
+        <div class="row no-margin footer_cont well">
             <?php dynamic_sidebar('sidebar-footer'); ?>
 
             <div class="col-sm-6 col-md-4">
