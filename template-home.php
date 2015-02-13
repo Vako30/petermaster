@@ -25,7 +25,7 @@ Template Name: Home
             <div class="caption">
                 <h3>Thumbnail label</h3>
             </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/538710492.jpg"" alt="...">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/538710492.jpg" alt="...">
         </div>
     </div>
 
@@ -34,7 +34,7 @@ Template Name: Home
             <div class="caption">
                 <h3>Thumbnail label</h3>
             </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/slide1.jpg"" alt="...">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/slide1.jpg" alt="...">
         </div>
     </div>
 
@@ -43,7 +43,7 @@ Template Name: Home
             <div class="caption">
                 <h3>Thumbnail label</h3>
             </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/538710492.jpg"" alt="...">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/538710492.jpg" alt="...">
         </div>
     </div>
 </div>
@@ -70,7 +70,7 @@ Template Name: Home
             <div class="caption">
                 <h3>Thumbnail label</h3>
             </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/538710492.jpg"" alt="...">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/538710492.jpg" alt="...">
         </div>
     </div>
 
@@ -79,7 +79,7 @@ Template Name: Home
             <div class="caption">
                 <h3>Thumbnail label</h3>
             </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/2lenovoideapady50059345640.jpg"" alt="...">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/2lenovoideapady50059345640.jpg" alt="...">
         </div>
     </div>
 
@@ -88,7 +88,7 @@ Template Name: Home
             <div class="caption">
                 <h3>Thumbnail label</h3>
             </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/538710492.jpg"" alt="...">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/538710492.jpg" alt="...">
         </div>
     </div>
 </div>
