@@ -3,7 +3,7 @@
  Template Name: Reviews
  */
 ?>
-<div class="row well">
+<div class="no-margin row well">
 
     <h1 class="text-center">Отзывы</h1>
 
