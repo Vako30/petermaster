@@ -10,12 +10,13 @@
                 </button>
                 <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo4.png" class="img-responsive" alt=""></a>
             </div>
+
+            <div class="pull-right phone-mother-div "> <span class="glyphicon glyphicon-earphone phone-icon"></span> <span class="phone-number">(812) 941-82-71</span> </div>
             <div class="col-sm-12 col-md-8">
                 <nav class=" collapse navbar-collapse" role="navigation">
 
                     <div class="col-xs-12 no-padding">
-                        <div class=" pull-right phone-mother-div "> <span class="glyphicon glyphicon-earphone phone-icon"></span> <span class="phone-number">(812) 941-82-71</span> </div>
-                    </div>
+                        </div>
                     <div class="col-xs-12 no-padding">
                     <?php
                     if (has_nav_menu('primary_navigation')) :
