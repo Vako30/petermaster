@@ -5,99 +5,44 @@ Template Name: Home
 ?>
 <div id="owl-example" class="owl-carousel">
 
-    <div class="general-slider">
-        <div class="sl-items">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/slide1.jpg" alt="">
+    <?php $query = new WP_Query(array('category_name' => 'slider'));
+    if ($query->have_posts()) : while ($query->have_posts()) :
+        $query->the_post(); ?>
+        <div class="general-slider">
+            <div class="sl-items">
+                <? echo get_the_post_thumbnail($id); ?>
+            </div>
         </div>
-        <div class="owl-under-img-text">
-            <h1></h1>
-            <p></p>
-        </div>
-    </div>
+    <?
+    endwhile;
+    endif;
+    // Reset Query
+    //wp_reset_query();
+    ?>
 </div>
 
 <div class="row no-margin well">
 
     <h1 class="text-center">Загаловок H1</h1>
-
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-            <div class="caption">
-                <h3>Thumbnail label</h3>
+    <?php $query = new WP_Query(array('category_name' => 'firsttitle'));
+    if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h3><? the_title() ?></h3>
+                </div>
+                <? echo get_the_post_thumbnail($id, 'medium'); ?>
             </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/538710492.jpg" alt="...">
         </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-            <div class="caption">
-                <h3>Thumbnail label</h3>
-            </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/slide1.jpg" alt="...">
-        </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-            <div class="caption">
-                <h3>Thumbnail label</h3>
-            </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/538710492.jpg" alt="...">
-        </div>
-    </div>
-</div>
-
-<div class="row no-margin well">
-    <h2 class="text-center">Загаловок H2</h2>
-
-    <p class="">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Dolore esse illo ipsa ipsam itaque iusto sed voluptate?
-        Ad aliquam assumenda consequatur cum dolor dolorem doloremque
-        dolores dolorum et, excepturi facere facilis fugiatimpedit, in incidunt labore
-        magnam modi molestiae optio, quas quibusdam reprehenderit rerum vitae. Dolore id minus reiciendis veniam!
-    </p>
+    <?
+    endwhile;
+    endif;
+    // Reset Query
+    //wp_reset_query();
+    ?>
 
 </div>
 
-<div class="row no-margin well">
-
-    <h3 class="text-center">Загаловок H3</h3>
-
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-            <div class="caption">
-                <h3>Thumbnail label</h3>
-            </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/538710492.jpg" alt="...">
-        </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-            <div class="caption">
-                <h3>Thumbnail label</h3>
-            </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/2lenovoideapady50059345640.jpg" alt="...">
-        </div>
-    </div>
-
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-            <div class="caption">
-                <h3>Thumbnail label</h3>
-            </div>
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/538710492.jpg" alt="...">
-        </div>
-    </div>
-</div>
-
-<div class="row no-margin well ">
-
-    <h4 class="text-center">Загаловок H4</h4>
-
-    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam assumenda aut blanditiis
-        iste labore magnam non rerum sit tempore vel. </p>
-
-</div>
+<?php while (have_posts()) : the_post(); ?>
+    <?php get_template_part('templates/content', 'page'); ?>
+<?php endwhile; ?>
