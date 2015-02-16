@@ -33,47 +33,44 @@
     </nav>
     <div class="row">
         <form role="form" action="" method="post">
-            <div class="col-lg-6">
+            <div class="col-xs-12 col-md-6 col-lg-6">
                 <h1 class="text-center">Оставить отзыв</h1>
 
                 <div class="form-group">
                     <label for="InputName">Заголовок</label>
-
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Заголовок"
-                               required>
-                    </div>
+                    <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Заголовок"
+                           required>
                 </div>
                 <div class="form-group">
                     <label for="InputName">Имя</label>
 
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Имя"
-                               required>
-                        </div>
+
+                    <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Имя"
+                           required>
+
                 </div>
                 <div class="form-group">
                     <label for="InputName">Город</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Город"
-                               required>
-                        </div>
+
+                    <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Город"
+                           required>
+
                 </div>
                 <div class="form-group">
                     <label for="InputEmail">Email</label>
 
-                    <div class="input-group">
-                        <input type="email" class="form-control" id="InputEmail" name="InputEmail"
-                               placeholder="example@gmail.com" required>
-                       </div>
+
+                    <input type="email" class="form-control" id="InputEmail" name="InputEmail"
+                           placeholder="example@gmail.com" required>
+
                 </div>
                 <div class="form-group">
                     <label for="InputMessage">Сообщение</label>
 
-                    <div class="input-group">
+
                         <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5"
                                   required></textarea>
-                        </div>
+
                 </div>
                 <input type="submit" name="submit" id="submit" value="ОТПРАВИТЬ" class="btn btn-info pull-right">
             </div>
