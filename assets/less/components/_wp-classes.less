@@ -17,9 +17,6 @@ figure.alignnone {
 
 @media (min-width: @screen-sm-min) {
   // Only float images if not on an extra small device like smartphones
-  .nav{
-    float: none !important;
-  }
   .alignleft {
     float: left;
     margin-right: (@line-height-computed / 2);
@@ -29,12 +26,12 @@ figure.alignnone {
     margin-left: (@line-height-computed / 2);
   }
 }
-@media (min-width: @screen-xs-min) {
+@media (min-width: @screen-md-min){
   .nav{
-    float: none !important;
+    float: right !important;
   }
 }
-@media (max-width: @screen-xs-min) {
+@media (max-width: @screen-md-min) {
   .nav{
     float: none !important;
   }
