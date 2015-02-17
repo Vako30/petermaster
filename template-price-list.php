@@ -12,7 +12,7 @@
         <?php $query = new WP_Query(array('category_name' => 'price'));
         if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
             <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="heading">
+                <div class="panel-heading" role="tab">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#<?= get_the_ID() ?>"
                            aria-expanded="true"
