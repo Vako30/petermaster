@@ -9,6 +9,7 @@
                         <div class="caption">
                             <? the_content() ?>
                         </div>
+                        <? echo get_the_post_thumbnail($id, 'small'); ?>
                     </div>
                 </div>
             <?
