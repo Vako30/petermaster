@@ -10,7 +10,7 @@
                 <strong class="col-xs-12 col-md-8"><?php echo $comment->comment_author; ?></strong></br>
                 <time class="col-xs-12 col-md-9"><?php echo $comment->comment_date; ?></time>
                 </br>
-                <div class="col-xs-12 col-md-9"><?php echo $comment->comment_type; ?></div>
+                <div class="col-xs-12 col-md-9"><?php echo get_comment_meta( $comment->comment_ID, 'type', true ); ?></div>
                 </br>
                 <div class="col-xs-12 col-md-9"><?php echo $comment->comment_content; ?>.</div>
                 <div class="col-xs-12 col-md-9">
@@ -21,12 +21,6 @@
     <?php endforeach; ?>
 </div>
 <?php $comment_args = array('fields' => apply_filters('comment_form_default_fields', array(
-    'comment_type' => '<p class="comment-form-type">' .
-        '<label for="type">' . __('Заголовок *') . '</label> ' .
-        ($req ? '<span class="required">*</span>' : '') .
-        '<input id="comment_type" name="comment_type" type="text" value="' .
-        esc_attr($commenter['comment_type']) . '" size="30"' . $aria_req . ' />' .
-        '</p><!-- #form-section-author .form-section -->',
     'author' => '<p class="comment-form-author">' .
         '<label for="author">' . __('Имя *') . '</label> ' .
         ($req ? '<span class="required">*</span>' : '') .

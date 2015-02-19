@@ -31,3 +31,20 @@ foreach ($roots_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+function add_comment_fields($fields) {
+
+    $fields['type'] = '<p class="comment-form-age"><label for="type">' . __( 'Заголовок' ) . '</label>' .
+        '<input id="type" name="type" type="text" size="30" /></p>';
+    return $fields;
+
+}
+add_filter('comment_form_default_fields','add_comment_fields');
+function add_comment_meta_values($comment_id) {
+
+    if(isset($_POST['type'])) {
+        $type = wp_filter_nohtml_kses($_POST['type']);
+        add_comment_meta($comment_id, 'type', $type, false);
+    }
+
+}
+add_action ('comment_post', 'add_comment_meta_values', 1);
