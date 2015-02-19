@@ -20,6 +20,7 @@
         </div>
     <?php endforeach; ?>
 </div>
+
 <?php $comment_args = array('fields' => apply_filters('comment_form_default_fields', array(
     'author' => '<p class="comment-form-author">' .
         '<label for="author">' . __('Имя *') . '</label> ' .
