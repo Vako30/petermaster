@@ -7,10 +7,10 @@
     <?php foreach (get_comments() as $comment): ?>
         <div class="row">
             <div>
-                <strong class="col-xs-12 col-md-8"><?php echo $comment->comment_author; ?></strong></br>
+                <strong class="author_name col-xs-12 col-md-8"><?php echo $comment->comment_author; ?></strong></br>
                 <time class="col-xs-12 col-md-9"><?php echo $comment->comment_date; ?></time>
                 </br>
-                <div class="col-xs-12 col-md-9"><?php echo get_comment_meta( $comment->comment_ID, 'type', true ); ?></div>
+                <div class="com_type col-xs-12 col-md-9"><?php echo get_comment_meta( $comment->comment_ID, 'type', true ); ?></div>
                 </br>
                 <div class="col-xs-12 col-md-9"><?php echo $comment->comment_content; ?>.</div>
                 <div class="col-xs-12 col-md-9">
