@@ -11,7 +11,6 @@ Template Name: Home
 <div id="owl-example" class="owl-carousel">
 
 
-
     <?php $query = new WP_Query(array('category_name' => 'slider'));
 
     if ($query->have_posts()) : while ($query->have_posts()) :
@@ -89,11 +88,11 @@ Template Name: Home
 
                 <div class="caption">
 
-                    <h3><? the_title() ?></h3>
+                    <? the_title() ?>
 
                 </div>
 
-                <? echo get_the_post_thumbnail($id, 'medium'); ?>
+                <? echo get_the_post_thumbnail($id, 'thumbnail'); ?>
 
             </div>
 
@@ -143,7 +142,7 @@ endif;
 
     if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
 
-        <p class=""><? the_content() ?></p>
+        <? the_content() ?>
 
     <?
 
@@ -198,19 +197,17 @@ endif;
     }
     if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
 
-
-
         <div class="col-sm-6 col-md-<?php echo $x?>">
 
             <div class="thumbnail">
 
                 <div class="caption">
 
-                    <h3 class="text-center"><? the_content() ?></h3>
+                    <? the_content() ?>
 
                 </div>
 
-                <? echo get_the_post_thumbnail($id, 'small'); ?>
+                <? echo get_the_post_thumbnail($id, 'thumbnail'); ?>
 
             </div>
 
@@ -255,7 +252,7 @@ endif;
 
 if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
 
-        <p class=""><? the_content() ?></p>
+        <? the_content() ?>
 
 <?
 

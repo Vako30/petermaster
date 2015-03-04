@@ -7,7 +7,9 @@
 <div class="no-margin row well">
 
     <h1 class="text-center">Прайс-Лист</h1>
-
+    <?php while (have_posts()) : the_post(); ?>
+        <div class="row no-margin well"> <?php get_template_part('templates/content', 'page'); ?></div>
+    <?php endwhile; ?>
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <?php $query = new WP_Query(array('category_name' => 'price'));
         if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
