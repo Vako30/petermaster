@@ -26,7 +26,7 @@ function roots_bs3_breadcrumb() {
     if (is_home() || is_front_page()) {
         if ($show_on_home == 1) echo '<div class="breadcrumbs mb-box"><a href="' . $home_link . '">' . $text['home'] . '</a></div>';
     } else {
-        echo '<div class="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">';
+        echo '<div class="breadcrumbs" id="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">';
         if ($show_home_link == 1) {
             echo '<a href="' . $home_link . '" rel="v:url" property="v:title">' . $text['home'] . '</a>';
             if ($frontpage_id == 0 || $parent_id != $frontpage_id) echo $delimiter;
