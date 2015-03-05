@@ -1,5 +1,4 @@
 <?php
-//https://gist.github.com/Dimox/5654092
 function roots_bs3_breadcrumb() {
     /* === OPTIONS === */
     $text['home']     = 'Главная'; // text for the 'Home' link

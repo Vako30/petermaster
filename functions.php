@@ -20,7 +20,8 @@ $roots_includes = array(
   'lib/nav.php',             // Custom nav modifications
   'lib/gallery.php',         // Custom [gallery] modifications
   'lib/scripts.php',         // Scripts and stylesheets
-  'lib/extras.php',          // Custom functions
+  'lib/extras.php',
+  'lib/breadcrumbs.php',    // Custom functions
 );
 
 foreach ($roots_includes as $file) {

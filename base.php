@@ -15,6 +15,11 @@
   <div class="wrap container" role="document">
     <div class="content row">
       <main class="main" role="main">
+          <?php
+          if ( function_exists('roots_bs3_breadcrumb') ) {
+              roots_bs3_breadcrumb();
+          }
+          ?>
         <?php include roots_template_path(); ?>
       </main><!-- /.main -->
 

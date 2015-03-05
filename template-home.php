@@ -10,7 +10,6 @@ Template Name: Home
 
 <div id="owl-example" class="owl-carousel">
 
-
     <?php $query = new WP_Query(array('category_name' => 'slider'));
 
     if ($query->have_posts()) : while ($query->have_posts()) :
