@@ -11,14 +11,14 @@ function roots_bs3_breadcrumb() {
     $show_on_home   = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
     $show_home_link = 1; // 1 - show the 'Home' link, 0 - don't show
     $show_title     = 1; // 1 - show the title for the links, 0 - don't show
-    $delimiter      = ' &raquo; '; // delimiter between crumbs
-    $before         = '<span class="current">'; // tag before the current crumb
-    $after          = '</span>'; // tag after the current crumb
+    $delimiter      = ''; // delimiter between crumbs
+    $before         = '<li class="current">'; // tag before the current crumb
+    $after          = '</li>'; // tag after the current crumb
     /* === END OF OPTIONS === */
     global $post;
     $home_link    = home_url('/');
-    $link_before  = '<span typeof="v:Breadcrumb">';
-    $link_after   = '</span>';
+    $link_before  = '<li typeof="v:Breadcrumb">';
+    $link_after   = '</li>';
     $link_attr    = ' rel="v:url" property="v:title"';
     $link         = $link_before . '<a' . $link_attr . ' href="%1$s">%2$s</a>' . $link_after;
     $parent_id    = $parent_id_2 = $post->post_parent;
@@ -28,7 +28,7 @@ function roots_bs3_breadcrumb() {
     } else {
         echo '<div class="breadcrumbs" id="breadcrumbs" xmlns:v="http://rdf.data-vocabulary.org/#">';
         if ($show_home_link == 1) {
-            echo '<a href="' . $home_link . '" rel="v:url" property="v:title">' . $text['home'] . '</a>';
+            echo    '<li class="current" id="bread_home"><a href="' . $home_link . '" rel="v:url" property="v:title">' . $text['home'] . '</a></li>';
             if ($frontpage_id == 0 || $parent_id != $frontpage_id) echo $delimiter;
         }
         if ( is_category() ) {
@@ -58,7 +58,7 @@ function roots_bs3_breadcrumb() {
                 $post_type = get_post_type_object(get_post_type());
                 $slug = $post_type->rewrite;
                 printf($link, $home_link . $slug['slug'] . '/', $post_type->labels->singular_name);
-                if ($show_current == 1) echo $delimiter . $before . get_the_title() . $after;
+                if ($show_current == 1) echo $delimiter . $before . get_the_title(). $after;
             } else {
                 $cat = get_the_category(); $cat = $cat[0];
                 $cats = get_category_parents($cat, TRUE, $delimiter);
@@ -67,7 +67,7 @@ function roots_bs3_breadcrumb() {
                 $cats = str_replace('</a>', '</a>' . $link_after, $cats);
                 if ($show_title == 0) $cats = preg_replace('/ title="(.*?)"/', '', $cats);
                 echo $cats;
-                if ($show_current == 1) echo $before . get_the_title() . $after;
+                if ($show_current == 1) echo $before  . get_the_title() . $after;
             }
         } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
             $post_type = get_post_type_object(get_post_type());
@@ -83,9 +83,12 @@ function roots_bs3_breadcrumb() {
                 echo $cats;
             }
             printf($link, get_permalink($parent), $parent->post_title);
-            if ($show_current == 1) echo $delimiter . $before . get_the_title() . $after;
+            if ($show_current == 1) echo $delimiter . $before . get_the_title(). $after;
         } elseif ( is_page() && !$parent_id ) {
-            if ($show_current == 1) echo $before . get_the_title() . $after;
+            if ($show_current == 1){
+                $href= get_permalink();
+                echo $before ."<a href='$href'>" . get_the_title()."</a>" . $after;
+            }
         } elseif ( is_page() && $parent_id ) {
             if ($parent_id != $frontpage_id) {
                 $breadcrumbs = array();
@@ -104,14 +107,14 @@ function roots_bs3_breadcrumb() {
             }
             if ($show_current == 1) {
                 if ($show_home_link == 1 || ($parent_id_2 != 0 && $parent_id_2 != $frontpage_id)) echo $delimiter;
-                echo $before . get_the_title() . $after;
+                echo $before  . get_the_title() . $after;
             }
         } elseif ( is_tag() ) {
-            echo $before . sprintf($text['tag'], single_tag_title('', false)) . $after;
+            echo $before  . sprintf($text['tag'], single_tag_title('', false)). $after;
         } elseif ( is_author() ) {
             global $author;
             $userdata = get_userdata($author);
-            echo $before . sprintf($text['author'], $userdata->display_name) . $after;
+            echo $before . sprintf($text['author'], $userdata->display_name). $after;
         } elseif ( is_404() ) {
             echo $before . $text['404'] . $after;
         } elseif ( has_post_format() && !is_singular() ) {
