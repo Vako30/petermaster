@@ -17,7 +17,7 @@ function roots_bs3_breadcrumb() {
     /* === END OF OPTIONS === */
     global $post;
     $home_link    = home_url('/');
-    $link_before  = '<li typeof="v:Breadcrumb">';
+    $link_before  = '<li class="current" typeof="v:Breadcrumb">';
     $link_after   = '</li>';
     $link_attr    = ' rel="v:url" property="v:title"';
     $link         = $link_before . '<a' . $link_attr . ' href="%1$s">%2$s</a>' . $link_after;
@@ -41,7 +41,10 @@ function roots_bs3_breadcrumb() {
                 if ($show_title == 0) $cats = preg_replace('/ title="(.*?)"/', '', $cats);
                 echo $cats;
             }
-            if ($show_current == 1) echo $before . sprintf($text['category'], single_cat_title('', false)) . $after;
+            if ($show_current == 1) {
+                $href= get_permalink();
+                echo $before . "<a href='$href'>" . sprintf($text['category'], single_cat_title('', false)) . "</a>" . $after;
+            }
         } elseif ( is_search() ) {
             echo $before . sprintf($text['search'], get_search_query()) . $after;
         } elseif ( is_day() ) {
@@ -58,7 +61,10 @@ function roots_bs3_breadcrumb() {
                 $post_type = get_post_type_object(get_post_type());
                 $slug = $post_type->rewrite;
                 printf($link, $home_link . $slug['slug'] . '/', $post_type->labels->singular_name);
-                if ($show_current == 1) echo $delimiter . $before . get_the_title(). $after;
+                if ($show_current == 1){
+                    $href= get_permalink();
+                    echo $delimiter . "<a href='$href'>" . $before . get_the_title(). "</a>". $after;
+                }
             } else {
                 $cat = get_the_category(); $cat = $cat[0];
                 $cats = get_category_parents($cat, TRUE, $delimiter);
@@ -67,7 +73,10 @@ function roots_bs3_breadcrumb() {
                 $cats = str_replace('</a>', '</a>' . $link_after, $cats);
                 if ($show_title == 0) $cats = preg_replace('/ title="(.*?)"/', '', $cats);
                 echo $cats;
-                if ($show_current == 1) echo $before  . get_the_title() . $after;
+                if ($show_current == 1){
+                    $href= get_permalink();
+                    echo $before. "<a href='$href'>"   . get_the_title(). "</a>" . $after;
+                }
             }
         } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
             $post_type = get_post_type_object(get_post_type());
