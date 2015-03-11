@@ -85,11 +85,7 @@ Template Name: Home
 
             <div class="thumbnail">
 
-                <div class="caption">
-
-                    <? the_title() ?>
-
-                </div>
+                <div class="caption"><? the_title() ?></div>
 
                 <? echo get_the_post_thumbnail($id, 'thumbnail'); ?>
 
@@ -205,11 +201,7 @@ endif;
 
             <div class="thumbnail">
 
-                <div class="caption">
-
-                    <? the_content() ?>
-
-                </div>
+                <div class="caption"><? the_content() ?></div>
 
                 <? echo get_the_post_thumbnail($id, 'thumbnail'); ?>
                 <!-- Button trigger modal -->

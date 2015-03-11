@@ -51,7 +51,7 @@
 
                 $(".btn-info").click(function(){
                   var  $i=$(this).parent().children('.caption').html();
-                    alert($i);
+                  $('input[name="hidden_CF"]').val($('input[name="hidden_CF"]').val() + $i );
                 });
 
             }
