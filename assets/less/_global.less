@@ -4,6 +4,9 @@ body{
   background: -moz-linear-gradient(@gazan 110px,#fff); /* For Firefox 3.6 to 15 */
   background: linear-gradient(@gazan 110px,#fff ); /* Standard syntax (must be last) */
 }
+a{
+  text-decoration: none !important;
+}
 .container{
   background-color: #fff;
 }
@@ -18,7 +21,7 @@ address{
   width: 100% !important;
 }
 #menu-primary-navigation{
-  background: #B8B8B8;
+  background: #8B8B8B;
   font-size: 15px;
   li{
     a{
@@ -57,7 +60,7 @@ address{
   top: 5px;
 }
 .phone-number{
-  background: #B8B8B8;
+  background: #8B8B8B;
   padding: 3px;
 }
 .media-object{
@@ -88,9 +91,9 @@ hr{
 .text_input{
   height: 140px !important;
 }
-.comment-reply-link{
+/*.comment-reply-link{
   color: #7BB5CF;
-}
+}*/
 .children{
   background-color: #E9E9E9;
 }
@@ -108,5 +111,22 @@ hr{
 margin:0;
 }
 .hidden_field_CF7{
-  display:none
+  /*display:none*/
+}
+.modal-dialog {
+  width: @modal-mdsm;
+}
+
+
+footer{
+  .well{
+    background-color: @gazan;
+  }
+  p{
+    color:#fff;
+  }
+  .thumbnail{
+    border: 0;
+    background-color: @gazan;
+  }
 }

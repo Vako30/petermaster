@@ -19,7 +19,7 @@
             //wp_reset_query();
             ?>
 
-            <div class="col-xs-12 text-center alert alert-info">
+            <div class="col-xs-12 text-center alert">
                 <?php $query = new WP_Query(array('category_name' => 'footerdown'));
                 if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
                              <? the_content() ?>

@@ -90,7 +90,7 @@ Template Name: Home
                 <? echo get_the_post_thumbnail($id, 'thumbnail'); ?>
 
                 <!-- Button trigger modal -->
-                <div class="btn btn-info div-contact-button" data-toggle="modal" data-target="#myModal">
+                <div class="btn btn-danger div-contact-button" data-toggle="modal" data-target="#myModal">
                     <p class="div-p-contact-button">написать</p>
                 </div>
 
@@ -205,7 +205,7 @@ endif;
 
                 <? echo get_the_post_thumbnail($id, 'thumbnail'); ?>
                 <!-- Button trigger modal -->
-                <div class="btn btn-info div-contact-button" data-toggle="modal" data-target="#myModal">
+                <div class="btn btn-danger div-contact-button" data-toggle="modal" data-target="#myModal">
                     <p class="div-p-contact-button">купить</p>
                 </div>
             </div>
