@@ -47,7 +47,7 @@ Template Name: Home
     if ($query->have_posts()) : while ($query->have_posts()) :
 
         $query->the_post(); ?>
-        <div class="text-center"><? the_content() ?></div>
+        <div class=""><? the_content() ?></div>
     <?
 
     endwhile;
@@ -90,8 +90,16 @@ Template Name: Home
                 <? echo get_the_post_thumbnail($id, 'thumbnail'); ?>
 
                 <!-- Button trigger modal -->
-                <div class="btn btn-danger div-contact-button" data-toggle="modal" data-target="#myModal">
-                    <p class="div-p-contact-button">написать</p>
+                <div class="btn btn-danger div-contact-button" data-toggle="modal" data-target="#myModal<?php echo CFS()->get('write_or_buy')?>">
+                    <p class="div-p-contact-button">
+                        <?php if( CFS()->get('write_or_buy')==1)
+                        {
+                            echo "купить";
+                        }else{
+                            echo "написать";
+                        }
+                        ?>
+                    </p>
                 </div>
 
 
@@ -205,8 +213,16 @@ endif;
 
                 <? echo get_the_post_thumbnail($id, 'thumbnail'); ?>
                 <!-- Button trigger modal -->
-                <div class="btn btn-danger div-contact-button" data-toggle="modal" data-target="#myModal">
-                    <p class="div-p-contact-button">купить</p>
+                <div class="btn btn-danger div-contact-button" data-toggle="modal" data-target="#myModal<?php echo CFS()->get('write_or_buy')?>" >
+                    <p class="div-p-contact-button">
+                        <?php if( CFS()->get('write_or_buy')==1)
+                        {
+                            echo "купить";
+                        }else{
+                            echo "написать";
+                        }
+                        ?>
+                    </p>
                 </div>
             </div>
 
@@ -272,10 +288,30 @@ endif;
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Обратная связь</h4>
+                <h4 class="modal-title" id="myModalLabel">Купить товар</h4>
             </div>
             <div class="modal-body">
-                <?php echo do_shortcode( '[contact-form-7 id="172" title="Контактная форма 1"]' );  ?>
+
+                <?php
+                    echo do_shortcode( '[contact-form-7 id="172" title="Купить товар"]' );
+                ?>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Заказать услугу</h4>
+            </div>
+            <div class="modal-body">
+
+                  <?php  echo do_shortcode( '[contact-form-7 id="203" title="услуга"]' );?>
             </div>
         </div>
     </div>

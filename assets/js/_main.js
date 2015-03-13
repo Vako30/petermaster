@@ -51,7 +51,8 @@
 
                 $(".btn-danger").click(function(){
                   var  $i=$(this).parent().children('.caption').html();
-                  $('input[name="hidden_CF"]').val($('input[name="hidden_CF"]').val() + $i );
+                  $('input[name="hidden_CF"]').val("");
+                  $('input[name="hidden_CF"]').val($i);
                 });
 
             }
