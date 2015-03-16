@@ -83,11 +83,13 @@ Template Name: Home
 
         <div class="col-sm-6 col-md-<?php echo $x ?>">
 
-            <div class="thumbnail">
+            <div class="thumbnail thumnbnail-center">
 
                 <div class="caption"><? the_title() ?></div>
 
                 <? echo get_the_post_thumbnail($id, 'thumbnail'); ?>
+                <p class="Description_of_item"><?php echo CFS()->get('Description_of_item'); ?></p>
+                <p class="badge price_of_item "><?php echo CFS()->get('Price'); ?></p><br>
 
                 <!-- Button trigger modal -->
                 <div class="btn btn-danger div-contact-button" data-toggle="modal" data-target="#myModal<?php echo CFS()->get('write_or_buy')?>">
@@ -101,7 +103,6 @@ Template Name: Home
                         ?>
                     </p>
                 </div>
-
 
             </div>
         </div>
@@ -207,11 +208,13 @@ endif;
 
         <div class="col-sm-6 col-md-<?php echo $x?>">
 
-            <div class="thumbnail">
+            <div class="thumbnail thumnbnail-center">
 
                 <div class="caption"><? the_content() ?></div>
 
                 <? echo get_the_post_thumbnail($id, 'thumbnail'); ?>
+                <p class="Description_of_item"><?php echo CFS()->get('Description_of_item'); ?></p>
+                <p class="badge price_of_item"><?php echo CFS()->get('Price'); ?></p><br>
                 <!-- Button trigger modal -->
                 <div class="btn btn-danger div-contact-button" data-toggle="modal" data-target="#myModal<?php echo CFS()->get('write_or_buy')?>" >
                     <p class="div-p-contact-button">
