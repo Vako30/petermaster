@@ -6,7 +6,7 @@
 
 <section id="comments" class="comments">
   <?php if (have_comments()) : ?>
-    <h2><?php printf(_nx('One response to &ldquo;%2$s&rdquo;', '%2$s', get_comments_number(), 'comments title', 'roots'), number_format_i18n(get_comments_number())); ?></h2>
+<!--    <h2>--><?php //printf(_nx('One response to &ldquo;%2$s&rdquo;', '%2$s', get_comments_number(), 'comments title', 'roots'), number_format_i18n(get_comments_number())); ?><!--</h2>-->
 
     <ol class="comment-list">
       <?php wp_list_comments(array('style' => 'ol', 'short_ping' => true)); ?>

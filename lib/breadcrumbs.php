@@ -46,16 +46,20 @@ function roots_bs3_breadcrumb() {
                 echo $before . "<a href='$href'>" . sprintf($text['category'], single_cat_title('', false)) . "</a>" . $after;
             }
         } elseif ( is_search() ) {
-            echo $before . sprintf($text['search'], get_search_query()) . $after;
+            $href= get_permalink();
+            echo $before. "<a href='$href'>" . sprintf($text['search'], get_search_query()). "</a>" . $after;
         } elseif ( is_day() ) {
+            $href= get_permalink();
             echo sprintf($link, get_year_link(get_the_time('Y')), get_the_time('Y')) . $delimiter;
             echo sprintf($link, get_month_link(get_the_time('Y'),get_the_time('m')), get_the_time('F')) . $delimiter;
-            echo $before . get_the_time('d') . $after;
+            echo $before. "<a href='$href'>" . get_the_time('d'). "</a>" . $after;
         } elseif ( is_month() ) {
             echo sprintf($link, get_year_link(get_the_time('Y')), get_the_time('Y')) . $delimiter;
-            echo $before . get_the_time('F') . $after;
+            $href= get_permalink();
+            echo $before. "<a href='$href'>"  . get_the_time('F'). "</a>"  . $after;
         } elseif ( is_year() ) {
-            echo $before . get_the_time('Y') . $after;
+            $href= get_permalink();
+            echo $before . "<a href='$href'>". get_the_time('Y'). "</a>" . $after;
         } elseif ( is_single() && !is_attachment() ) {
             if ( get_post_type() != 'post' ) {
                 $post_type = get_post_type_object(get_post_type());
@@ -79,6 +83,7 @@ function roots_bs3_breadcrumb() {
                 }
             }
         } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
+            $href= get_permalink();
             $post_type = get_post_type_object(get_post_type());
             echo $before . $post_type->labels->singular_name . $after;
         } elseif ( is_attachment() ) {

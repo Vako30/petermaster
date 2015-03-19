@@ -14,6 +14,11 @@
 
   <div class="wrap container" role="document">
     <div class="content row">
+        <?php if (roots_display_sidebar()) : ?>
+            <aside class="sidebar " role="complementary">
+                <?php include roots_sidebar_path(); ?>
+            </aside><!-- /.sidebar -->
+        <?php endif; ?>
       <main class="main" role="main">
           <?php
           if ( function_exists('roots_bs3_breadcrumb') ) {
@@ -22,11 +27,7 @@
           ?>
         <?php include roots_template_path(); ?>
       </main><!-- /.main -->
-        <?php if (roots_display_sidebar()) : ?>
-            <aside class="sidebar " role="complementary">
-                <?php include roots_sidebar_path(); ?>
-            </aside><!-- /.sidebar -->
-        <?php endif; ?>
+
     </div><!-- /.content -->
   </div><!-- /.wrap -->
 
