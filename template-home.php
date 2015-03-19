@@ -75,24 +75,22 @@ Template Name: Home
     }
 
     else{
-
         $x=4;
-
     }
     if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
 
-        <div class="col-sm-6 col-md-<?php echo $x ?>">
+        <div class="min-height col-sm-6 col-md-<?php echo $x ?>">
 
             <div class="thumbnail thumnbnail-center">
 
                 <div class="caption"><? the_title() ?></div>
 
-                <? echo get_the_post_thumbnail($id, 'thumbnail'); ?>
+                <a href="<? the_permalink(); ?>"><? echo get_the_post_thumbnail($id, 'thumbnail'); ?></a>
                 <p class="Description_of_item"><?php echo CFS()->get('Description_of_item'); ?></p>
                 <p class="badge price_of_item "><?php echo CFS()->get('Price'); ?></p><br>
 
                 <!-- Button trigger modal -->
-                <div class="btn btn-danger div-contact-button" data-toggle="modal" data-target="#myModal<?php echo CFS()->get('write_or_buy')?>">
+                <div class="btn btn-danger div-contact-button" data-toggle="modal" data-target="#myModal<?php if( CFS()->get('write_or_buy')==1){ echo '1';}?>">
                     <p class="div-p-contact-button">
                         <?php if( CFS()->get('write_or_buy')==1)
                         {
@@ -206,17 +204,17 @@ endif;
     }
     if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
 
-        <div class="col-sm-6 col-md-<?php echo $x?>">
+        <div class="min-height col-sm-6 col-md-<?php echo $x?>">
 
             <div class="thumbnail thumnbnail-center">
 
-                <div class="caption"><? the_content() ?></div>
+                <div class="caption"><? the_title() ?></div>
 
-                <? echo get_the_post_thumbnail($id, 'thumbnail'); ?>
+                <a href="<? the_permalink(); ?>"><? echo get_the_post_thumbnail($id, 'thumbnail'); ?></a>
                 <p class="Description_of_item"><?php echo CFS()->get('Description_of_item'); ?></p>
                 <p class="badge price_of_item"><?php echo CFS()->get('Price'); ?></p><br>
                 <!-- Button trigger modal -->
-                <div class="btn btn-danger div-contact-button" data-toggle="modal" data-target="#myModal<?php echo CFS()->get('write_or_buy')?>" >
+                <div class="btn btn-danger div-contact-button" data-toggle="modal" data-target="#myModal<?php if( CFS()->get('write_or_buy')==1){ echo '1';}?>">
                     <p class="div-p-contact-button">
                         <?php if( CFS()->get('write_or_buy')==1)
                         {
@@ -291,13 +289,12 @@ endif;
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Купить товар</h4>
+                <h4 class="modal-title" id="myModalLabel">Заказать услугу</h4>
             </div>
             <div class="modal-body">
 
                 <?php
-                    echo do_shortcode( '[contact-form-7 id="172" title="Купить товар"]' );
-                ?>
+                echo do_shortcode( '[contact-form-7 id="172" title="Купить товар"]' );?>
 
 
             </div>
@@ -310,11 +307,12 @@ endif;
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Заказать услугу</h4>
+                <h4 class="modal-title" id="myModalLabel">Купить товар</h4>
             </div>
             <div class="modal-body">
+                <?php echo do_shortcode( '[contact-form-7 id="203" title="услуга"]' );
+                ?>
 
-                  <?php  echo do_shortcode( '[contact-form-7 id="203" title="услуга"]' );?>
             </div>
         </div>
     </div>
