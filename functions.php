@@ -12,9 +12,10 @@
 $roots_includes = array(
   'lib/utils.php',           // Utility functions
   'lib/init.php',            // Initial theme setup and constants
-  'lib/wrapper.php',         // Theme wrapper class
-  'lib/sidebar.php',         // Sidebar class
-  'lib/config.php',          // Configuration
+    'lib/widgets.php',    // Custom functions
+    'lib/wrapper.php',         // Theme wrapper class
+    'lib/sidebar.php',         // Sidebar class
+    'lib/config.php',          // Configuration
   'lib/activation.php',      // Theme activation
   'lib/titles.php',          // Page titles
   'lib/nav.php',             // Custom nav modifications
@@ -22,6 +23,7 @@ $roots_includes = array(
   'lib/scripts.php',         // Scripts and stylesheets
   'lib/extras.php',
   'lib/breadcrumbs.php',    // Custom functions
+
 );
 
 foreach ($roots_includes as $file) {
