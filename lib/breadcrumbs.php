@@ -130,7 +130,8 @@ function roots_bs3_breadcrumb() {
             $userdata = get_userdata($author);
             echo $before . sprintf($text['author'], $userdata->display_name). $after;
         } elseif ( is_404() ) {
-            echo $before . $text['404'] . $after;
+            $href= get_permalink();
+            echo $before ."<a href='$href'>". $text['404']. "</a>" . $after;
         } elseif ( has_post_format() && !is_singular() ) {
             echo get_post_format_string( get_post_format() );
         }

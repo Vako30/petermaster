@@ -42,23 +42,9 @@ Template Name: Home
 
 
 <div class="row no-margin custom-well">
-    <?php $query = new WP_Query(array('category_name' => 'block1'));
-
-    if ($query->have_posts()) : while ($query->have_posts()) :
-
-        $query->the_post(); ?>
-        <div class=""><? the_content() ?></div>
-    <?
-
-    endwhile;
-
-    endif;
-
-    // Reset Query
-
-    //wp_reset_query();
-
-    ?>
+    <?php while (have_posts()) : the_post(); ?>
+        <div class=""><? get_template_part('templates/content', 'page'); ?></div>
+    <?  endwhile; ?>
 
     <?php $query = new WP_Query(array('category_name' => 'firsttitle'));
 
@@ -104,9 +90,6 @@ Template Name: Home
 
             </div>
         </div>
-
-
-
     <?
 
     endwhile;
@@ -118,56 +101,28 @@ Template Name: Home
     //wp_reset_query();
 
     ?>
-
-
-
+</div>
+<!--заголовок 2-->
+<?php while (have_posts()) : the_post(); ?>
+<div class="row no-margin custom-well">
+    <div class="text-center"><?php echo CFS()->get('home_header2'); ?></div>
+    <div><?php echo CFS()->get('redactor2'); ?></div>
 </div>
 
-<div class="row no-margin custom-well">
 
-<?php $query = new WP_Query(array('category_name' => 'block2'));
 
-if ($query->have_posts()) : while ($query->have_posts()) :
 
-    $query->the_post(); ?>
-    <div class="text-center"><? the_title() ?></div>
-    <div class="text-center"><? the_content() ?></div>
-<?
 
-endwhile;
 
-endif;
+<!-- Заголовок 3-->
+    <div class="row no-margin custom-well">
 
-// Reset Query
-
-//wp_reset_query();
-
-?>
-
-</div>
-<div class="row no-margin custom-well">
-
-    <?php $query = new WP_Query(array('category_name' => 'block3'));
-
-    if ($query->have_posts()) : while ($query->have_posts()) :
-
-        $query->the_post(); ?>
-    <div class="text-center"><? the_content() ?></div>
-    <?
-
-    endwhile;
-
-    endif;
-
-    // Reset Query
-
-    //wp_reset_query();
-
-    ?>
+      <div class="text-center"><?php echo CFS()->get('home_header3'); ?></div>
+<?php endwhile; ?>
 
     <?php $query = new WP_Query(array('category_name' => 'thirdtitle'));
 
-    // Заголовок 3
+
 
     $category_id = get_cat_ID('thirdtitle');
 
@@ -224,44 +179,13 @@ endif;
     ?>
 
 </div>
-
+<!--заголовок 4-->
+<?php while (have_posts()) : the_post(); ?>
 <div class="row no-margin custom-well">
-<?php //$query = new WP_Query(array('category_name' => 'block4'));
-//
-//if ($query->have_posts()) : while ($query->have_posts()) :    $query->the_post(); ?>
-<!--    <div class="text-center">--><?// the_content() ?><!--</div>-->
-<?//
-//
-//endwhile;
-//
-//endif;
-//
-//// Reset Query
-//
-////wp_reset_query();
-//
-//?>
-
-<?php $query = new WP_Query(array('category_name' => 'fourthtitle'));?>
-
-<!--Заголовок 4-->
-<div class="text-center"> <? echo get_post_meta( get_the_ID(),"zagolovok", true); ?> </div><?
-if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-
-        <? the_content() ?>
-
-<?
-
-endwhile;
-
-endif;
-
-// Reset Query
-
-//wp_reset_query();
-
-?>
+    <div class="text-center"><?php echo CFS()->get('home_header4'); ?></div>
+    <div><?php echo CFS()->get('redactor4'); ?></div>
 </div>
+<?php endwhile; ?>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
