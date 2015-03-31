@@ -41,7 +41,7 @@ Template Name: Home
 </div>
 
 
-<div class="row no-margin well">
+<div class="row no-margin custom-well">
     <?php $query = new WP_Query(array('category_name' => 'block1'));
 
     if ($query->have_posts()) : while ($query->have_posts()) :
@@ -123,13 +123,14 @@ Template Name: Home
 
 </div>
 
-<div class="row no-margin well">
+<div class="row no-margin custom-well">
 
 <?php $query = new WP_Query(array('category_name' => 'block2'));
 
 if ($query->have_posts()) : while ($query->have_posts()) :
 
     $query->the_post(); ?>
+    <div class="text-center"><? the_title() ?></div>
     <div class="text-center"><? the_content() ?></div>
 <?
 
@@ -143,27 +144,8 @@ endif;
 
 ?>
 
-<?php $query = new WP_Query(array('category_name' => 'secondtitle'));
-
-// Заголовок 2
-
-    if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-
-        <? the_content() ?>
-
-    <?
-
-    endwhile;
-
-    endif;
-
-    // Reset Query
-
-    //wp_reset_query();
-
-?>
 </div>
-<div class="row no-margin well">
+<div class="row no-margin custom-well">
 
     <?php $query = new WP_Query(array('category_name' => 'block3'));
 
@@ -243,29 +225,27 @@ endif;
 
 </div>
 
-<div class="row no-margin well">
-<?php $query = new WP_Query(array('category_name' => 'block4'));
+<div class="row no-margin custom-well">
+<?php //$query = new WP_Query(array('category_name' => 'block4'));
+//
+//if ($query->have_posts()) : while ($query->have_posts()) :    $query->the_post(); ?>
+<!--    <div class="text-center">--><?// the_content() ?><!--</div>-->
+<?//
+//
+//endwhile;
+//
+//endif;
+//
+//// Reset Query
+//
+////wp_reset_query();
+//
+//?>
 
-if ($query->have_posts()) : while ($query->have_posts()) :
+<?php $query = new WP_Query(array('category_name' => 'fourthtitle'));?>
 
-    $query->the_post(); ?>
-    <div class="text-center"><? the_content() ?></div>
-<?
-
-endwhile;
-
-endif;
-
-// Reset Query
-
-//wp_reset_query();
-
-?>
-
-<?php $query = new WP_Query(array('category_name' => 'fourthtitle'));
-
-// Заголовок 4
-
+<!--Заголовок 4-->
+<div class="text-center"> <? echo get_post_meta( get_the_ID(),"zagolovok", true); ?> </div><?
 if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
 
         <? the_content() ?>
