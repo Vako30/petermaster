@@ -1,5 +1,5 @@
 <div class="page-header">
   <h1>
-    <?php echo roots_title(); ?>
+    <?php echo "Не найдено"; ?>
   </h1>
 </div>

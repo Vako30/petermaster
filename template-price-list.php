@@ -4,7 +4,7 @@
 */
 ?>
 
-<div class="no-margin row well">
+<div class="no-margin row custom-well">
 
     <h1 class="text-center">Прайс-Лист</h1>
     <?php while (have_posts()) : the_post(); ?>
