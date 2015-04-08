@@ -7,40 +7,41 @@ Template Name: Home
 */
 
 ?>
+<!---->
+<!--<div id="owl-example" class="owl-carousel">-->
+<!---->
+<!--    --><?php //$query = new WP_Query(array('category_name' => 'slider'));
+//
+//    if ($query->have_posts()) : while ($query->have_posts()) :
+//
+//        $query->the_post(); ?>
+<!---->
+<!--        <div class="general-slider">-->
+<!---->
+<!--            <div class="sl-items">-->
+<!---->
+<!--                --><?// echo get_the_post_thumbnail($id); ?>
+<!---->
+<!--            </div>-->
+<!---->
+<!--        </div>-->
+<!---->
+<!--    --><?//
+//
+//    endwhile;
+//
+//    endif;
+//
+//    // Reset Query
+//
+//    //wp_reset_query();
+//
+//    ?>
+<!---->
+<!--</div>-->
 
-<div id="owl-example" class="owl-carousel">
-
-    <?php $query = new WP_Query(array('category_name' => 'slider'));
-
-    if ($query->have_posts()) : while ($query->have_posts()) :
-
-        $query->the_post(); ?>
-
-        <div class="general-slider">
-
-            <div class="sl-items">
-
-                <? echo get_the_post_thumbnail($id); ?>
-
-            </div>
-
-        </div>
-
-    <?
-
-    endwhile;
-
-    endif;
-
-    // Reset Query
-
-    //wp_reset_query();
-
-    ?>
-
-</div>
-
-
+<?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') ); ?>
+<div class="slider" style="background-image:url(<?php echo $url ?>)"></div>
 <div class="row no-margin custom-well">
     <?php while (have_posts()) : the_post(); ?>
         <div class=""><? get_template_part('templates/content', 'page'); ?></div>
@@ -69,7 +70,7 @@ Template Name: Home
 
             <div class="thumbnail thumnbnail-center">
 
-                <div class="caption"><? the_title() ?></div>
+                <div class="caption"><h3> <? the_title() ?> </h3></div>
 
                 <a href="<? the_permalink(); ?>"><? echo get_the_post_thumbnail($id, 'thumbnail'); ?></a>
                 <p class="Description_of_item"><?php echo CFS()->get('Description_of_item'); ?></p>
@@ -105,19 +106,15 @@ Template Name: Home
 <!--заголовок 2-->
 <?php while (have_posts()) : the_post(); ?>
 <div class="row no-margin custom-well">
-    <div class="text-center"><?php echo CFS()->get('home_header2'); ?></div>
+    <div class="text-center"><h2><?php echo CFS()->get('home_header2'); ?></h2></div>
     <div><?php echo CFS()->get('redactor2'); ?></div>
 </div>
 
 
-
-
-
-
-<!-- Заголовок 3-->
+    <!-- Заголовок 3-->
     <div class="row no-margin custom-well">
 
-      <div class="text-center"><?php echo CFS()->get('home_header3'); ?></div>
+      <div class="text-center"><h2><?php echo CFS()->get('home_header3'); ?></h2></div>
 <?php endwhile; ?>
 
     <?php $query = new WP_Query(array('category_name' => 'thirdtitle'));
@@ -129,15 +126,9 @@ Template Name: Home
     $i= get_category($category_id)->category_count;
 
     if($i<5){
-
         $x=12/$i;
-
-    }
-
-    else{
-
+    }else{
         $x=4;
-
     }
     if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
 
@@ -145,7 +136,7 @@ Template Name: Home
 
             <div class="thumbnail thumnbnail-center">
 
-                <div class="caption"><? the_title() ?></div>
+                <div class="caption"><h3><? the_title() ?></h3></div>
 
                 <a href="<? the_permalink(); ?>"><? echo get_the_post_thumbnail($id, 'thumbnail'); ?></a>
                 <p class="Description_of_item"><?php echo CFS()->get('Description_of_item'); ?></p>
@@ -197,10 +188,7 @@ Template Name: Home
             </div>
             <div class="modal-body">
 
-                <?php
-                echo do_shortcode( '[contact-form-7 id="172" title="Купить товар"]' );?>
-
-
+                <?php   echo do_shortcode( '[contact-form-7 id="172" title="Купить товар"]' );?>
             </div>
         </div>
     </div>
@@ -214,9 +202,7 @@ Template Name: Home
                 <h4 class="modal-title" id="myModalLabel">Купить товар</h4>
             </div>
             <div class="modal-body">
-                <?php echo do_shortcode( '[contact-form-7 id="203" title="услуга"]' );
-                ?>
-
+                <?php echo do_shortcode( '[contact-form-7 id="203" title="услуга"]' ); ?>
             </div>
         </div>
     </div>
