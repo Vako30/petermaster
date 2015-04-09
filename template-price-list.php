@@ -9,33 +9,32 @@
     <h1 class="text-center">Прайс-Лист</h1>
     <?php while (have_posts()) : the_post(); ?>
         <div class="row no-margin well"> <?php get_template_part('templates/content', 'page'); ?></div>
-    <?php endwhile; ?>
+        <? $items = CFS()->get('price_list_items');
+        $i=1;
+        foreach ($items as $item) :
+                $i++;
+        ?>
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-        <?php $query = new WP_Query(array('category_name' => 'price'));
-        if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
-            <div class="panel panel-default">
+        <div class="panel panel-default">
                 <div class="panel-heading" role="tab">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#<?= get_the_ID() ?>"
+                        <a data-toggle="collapse" data-parent="#accordion" href="#accordion<?echo $i; ?>"
                            aria-expanded="true"
-                           aria-controls="<?= get_the_ID() ?>">
-                            <? the_title() ?>
+                           aria-controls="accordion<?echo $i; ?>">
+                            <? echo $item['price_list_item_title']; ?>
                         </a>
                     </h4>
                 </div>
-                <div id="<?= get_the_ID() ?>" class="panel-collapse collapse" role="tabpanel"
+                <div id="accordion<? echo $i ?>" class="panel-collapse collapse" role="tabpanel"
                      aria-labelledby="heading">
                     <div class="panel-body">
-                        <? the_content() ?>
+                        <? echo $item['price_list_item_content']; ?>
                     </div>
                 </div>
             </div>
-        <?
-        endwhile;
-        endif;
-        // Reset Query
-        //wp_reset_query();
-        ?>
+
+        <? endforeach; endwhile;?>
+
     </div>
 
 
