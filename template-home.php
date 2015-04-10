@@ -51,7 +51,7 @@ Template Name: Home
 
 // Заголовок 1
 
-    $category_id = get_cat_ID('firsttitle');
+    $category_id = get_cat_ID('Услуги сантехника');
 
     $i= get_category($category_id)->category_count;
 
@@ -121,7 +121,7 @@ Template Name: Home
 
 
 
-    $category_id = get_cat_ID('thirdtitle');
+    $category_id = get_cat_ID('Перечень услуг');
 
     $i= get_category($category_id)->category_count;
 
