@@ -115,6 +115,7 @@ Template Name: Home
     <div class="row no-margin custom-well">
 
       <div class="text-center"><h2><?php echo CFS()->get('home_header3'); ?></h2></div>
+        <div><?php echo CFS()->get('redactor3'); ?></div>
 <?php endwhile; ?>
 
     <?php $query = new WP_Query(array('category_name' => 'thirdtitle'));

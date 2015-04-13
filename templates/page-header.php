@@ -1,5 +1,10 @@
 <div class="page-header">
   <h1>
-    <?php echo "Не найдено"; ?>
+    <?php if(is_404()) {
+        echo "Не найдено";
+    }else{
+     echo roots_title();
+    }
+    ?>
   </h1>
 </div>

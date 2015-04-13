@@ -17,9 +17,6 @@ address{
     border-radius: 5px;
   }
 }
-.main {
-  //width: 100% !important;
-}
 #menu-primary-navigation{
   background: #8B8B8B;
   font-size: 15px;
@@ -129,12 +126,13 @@ footer{
   .well{
     background-color: #626262;
   }
-  p{
-    color:#fff;
-  }
   .thumbnail{
     border: 0;
     background-color: #626262;
+  }
+  .container{
+    color:#fff;
+    text-align: center;
   }
 }
 .custom-well{
@@ -172,5 +170,17 @@ footer{
 @media (min-width: @screen-lg-min) {
   .slider{
     max-height: 400px;
+  }
+}
+#breadcrumbs{
+  margin-top:5px;
+}
+@media (min-width: @screen-sm-min){
+
+  .sidebar-primary .main {
+    width: 75% !important;
+  }
+  .sidebar {
+    width: 25% !important;
   }
 }
