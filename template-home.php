@@ -47,21 +47,19 @@ Template Name: Home
         <div class=""><? get_template_part('templates/content', 'page'); ?></div>
     <?  endwhile; ?>
 
-    <?php $query = new WP_Query(array('category_name' => 'firsttitle'));
+    <?php $query = new WP_Query(array('category_name' => 'services'));
 
 // Заголовок 1
 
-    $category_id = get_cat_ID('Услуги сантехника');
+    $category_id = get_cat_ID('Услуги');
 
     $i= get_category($category_id)->category_count;
 
-    if($i<5){
-
-    $x=12/$i;
-
-    }
-
-    else{
+    $i= get_category($category_id)->category_count;
+    $x=6;
+    if($i<5 && $i!=0){
+        $x=12/$i;
+    }elseif($i!=0){
         $x=4;
     }
     if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>
@@ -118,17 +116,17 @@ Template Name: Home
         <div><?php echo CFS()->get('redactor3'); ?></div>
 <?php endwhile; ?>
 
-    <?php $query = new WP_Query(array('category_name' => 'thirdtitle'));
+    <?php $query = new WP_Query(array('category_name' => 'products'));
 
 
 
-    $category_id = get_cat_ID('Перечень услуг');
+    $category_id = get_cat_ID('Товары');
 
     $i= get_category($category_id)->category_count;
-
-    if($i<5){
+    $x=6;
+    if($i<5 && $i!=0){
         $x=12/$i;
-    }else{
+    }elseif($i!=0){
         $x=4;
     }
     if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>

@@ -51,6 +51,7 @@
             '</p><!-- #form-section-comment .form-section -->',
         'comment_notes_after' => '',
     );
+    $comment_args['title_reply'] = __("Оставить отзыв");
     comment_form($comment_args); ?>
 </div>
 </section>
